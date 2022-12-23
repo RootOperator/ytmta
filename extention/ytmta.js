@@ -31,12 +31,12 @@ browser.runtime.onMessage.addListener(request => {
     let url = window.location.href;
     let rawTime = getElementByXpath("/html/body/ytmusic-app/ytmusic-app-layout/ytmusic-player-bar/div[1]/span").innerText
     let seconds = formatTime(rawTime)
-    let format_url = url + "&t=" + seconds
+    let formatURL = url + "&t=" + seconds
 
     // bypass YoutubeNonStop extention
     let video = document.querySelector("video");
     video.yns_pause = video.pause;
     video.yns_pause()
 
-    sendData(request.url, format_url)
+    sendData(request.url, formatURL)
 })
