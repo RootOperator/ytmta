@@ -33,7 +33,7 @@ browser.runtime.onMessage.addListener(request => {
     let seconds = formatTime(rawTime)
     let formatURL = url + "&t=" + seconds
 
-    // bypass YoutubeNonStop extention
+    // bypass YoutubeNonStop extension
     let video = document.querySelector("video");
     video.yns_pause = video.pause;
     video.yns_pause()
